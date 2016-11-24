@@ -1,0 +1,128 @@
+%%
+%% This is file `tumcolor.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% tumcolor.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2016 by Michael Vonbun <michael.vonbun@tum.de>
+%% 
+%% This file may be distributed and/or modified under the conditions of
+%% the LaTeX Project Public License, either version 1.2 of this license
+%% or (at your option) any later version.  The latest version of this
+%% license is in:
+%% 
+%%    http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.2 or later is part of all distributions of LaTeX version
+%% 1999/12/01 or later.
+%% 
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{tumcolor}
+    [2016/07/27 v2.2 provide official tum colors]
+\newif\ifpgfplots\pgfplotsfalse
+\DeclareOption{pgfplots}{\pgfplotstrue}%
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{xcolor}}%
+\ProcessOptions\relax%
+\RequirePackageWithOptions{xcolor}%
+\ifpgfplots
+  \RequirePackage{pgfplots}%
+  \RequirePackage{pgfplotstable}%
+  \tikzset{>=stealth}%
+  \usetikzlibrary{patterns}%
+  \usetikzlibrary{pgfplots.statistics}%
+\fi
+\definecolorset{RGB}{TUM}{}{%
+Black,   0,   0,   0;%
+Gray,   51,  51,  51;%
+White, 255, 255, 255;%
+Blue, 0, 101, 189;%
+Ivory,  218, 215, 203;%
+Orange, 227, 114,  34;%
+Green,  162, 173,   0%
+}%
+\definecolorset{RGB}{TUMGray}{}{%
+Lighter,  128, 128, 128;%
+Lightest, 204, 204, 204%
+}%
+\definecolorset{RGB}{TUMBlue}{}{%
+Darkest,    0,  51,  89;%
+Darker,     0,  82, 147;%
+Lighter,  100, 160, 200;%
+Lightest, 152, 198, 234%
+}%
+\colorlet{TUMBlueDarkest80}{TUMBlueDarkest!80}%
+\colorlet{TUMBlueDarkest50}{TUMBlueDarkest!50}%
+\colorlet{TUMBlueDarkest20}{TUMBlueDarkest!20}%
+\colorlet{TUMBlueDarker80}{TUMBlueDarker!80}%
+\colorlet{TUMBlueDarker50}{TUMBlueDarker!50}%
+\colorlet{TUMBlueDarker20}{TUMBlueDarker!20}%
+\colorlet{TUMBlueLighter80}{TUMBlueLighter!80}%
+\colorlet{TUMBlueLighter50}{TUMBlueLighter!50}%
+\colorlet{TUMBlueLighter20}{TUMBlueLighter!20}%
+\colorlet{TUMBlueLightest80}{TUMBlueLightest!80}%
+\colorlet{TUMBlueLightest50}{TUMBlueLightest!50}%
+\colorlet{TUMBlueLightest20}{TUMBlueLightest!20}%
+\definecolorset{RGB}{TUMPPT}{}{%
+Orange,    227, 114,  34;%
+Green,     162, 173,   0;%
+Blue4,     100, 160, 200;%
+Blue3,       0, 115, 207;%
+Blue2,       0,  82, 147;%
+Blue1,       0,  51,  89;%
+BlueLight,   0, 101, 189;%
+Gray,       51,  51,  51%
+}%
+\definecolorset{rgb}{TUMBeamer}{}{%
+Yellow,     1.00, 0.71, 0.00;%
+Orange,     1.00, 0.50, 0.00;%
+Red,        0.90, 0.20, 0.09;%
+DarkRed,    0.79, 0.13, 0.25;%
+Blue,       0.00, 0.60, 1.00;%
+LightBlue,  0.25, 0.75, 1.00;%
+Green,      0.57, 0.67, 0.42;%
+LightGreen, 0.71, 0.79, 0.51%
+}%
+\ifpgfplots
+\pgfplotscreateplotcyclelist{tum}{%
+  {color = TUMBlack,        mark = o,                     mark size = 3.8},%
+  {color = TUMBlue,         mark = star,                  mark size = 3.8},%
+  {color = TUMBlueDarker,   mark = square,                mark size = 3.8},%
+  {color = TUMBlueLighter,  mark = triangle,              mark size = 3.8},%
+  {color = TUMBlueDarkest,  mark = diamond,               mark size = 3.8},%
+  {color = TUMBlueLightest, mark = |,                     mark size = 3.8},%
+  %%
+  {color = TUMBlack,        mark = *,                     mark size = 3.8},%
+  {color = TUMBlue,         mark = 10-pointed star,       mark size = 3.8},%
+  {color = TUMBlueDarker,   mark = square*,               mark size = 3.8},%
+  {color = TUMBlueLighter,  mark = triangle*,             mark size = 3.8},%
+  {color = TUMBlueDarkest,  mark = diamond*,              mark size = 3.8},%
+  {color = TUMBlueLightest, mark = Mercedes star flipped, mark size = 3.8}%
+}%
+\pgfplotsset{/pgfplots/bar cycle list/.style={/pgfplots/cycle list={%
+      {black, mark = none, fill = TUMBlue},%
+      {black, mark = none, fill = TUMBlueLightest},%
+      {black, mark = none, pattern = north east lines, pattern color = TUMBlue},%
+      {black, mark = none, pattern = north west lines, pattern color = TUMBlue},%
+      {black, mark = none, pattern = north east lines, pattern color = TUMOrange},%
+      {black, mark = none, pattern = north west lines, pattern color = TUMOrange},%
+      {black, mark = none, pattern = horizontal lines, pattern color = TUMOrange},%
+      {black, mark = none, pattern = crosshatch,       pattern color = TUMOrange}%
+    }%
+  }%
+}%
+\fi
+\colorlet{TUMDarkBlue}{TUMBlueDarkest}%
+\colorlet{TUMDarkerBlue}{TUMBlueDarker}%
+\definecolor{TUMMediumBlue}{cmyk}{0.90,0.48,0.00,0.00}%
+\colorlet{TUMLighterBlue}{TUMBlueLighter}%
+\colorlet{TUMLightBlue}{TUMBlueLightest}%
+\colorlet{TUMDarkGray}{TUMGray}%
+\colorlet{TUMMediumGray}{TUMGrayLighter}%
+\colorlet{TUMLightGray}{TUMGrayLightest}%
+\endinput
+%%
+%% End of file `tumcolor.sty'.
