@@ -32,7 +32,7 @@ Some of the logos are closer to being quadratic than others (e.g. informatics, c
 - [ ] Informatics
 - [x] Mathematics
 - [ ] Mechanical Engineering
-- [ ] TUM School of Medicine Physics
+- [ ] TUM School of Medicine
 - [x] Physics
 - [ ] Sport and Health Sciences
 - [x] TUM School of Education
