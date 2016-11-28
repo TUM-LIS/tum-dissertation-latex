@@ -36,7 +36,7 @@ Status of support for non quadratic logos:
 - [ ] Chemistry
 - [x] Informatics
 - [ ] Mechanical Engineering
-- [ ] TUM School of Medicine Physics
+- [ ] TUM School of Medicine
 - [ ] Sport and Health Sciences
 - [ ] TUM School of Management
 
