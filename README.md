@@ -40,7 +40,8 @@ Status of support for non quadratic logos:
 - [ ] Sport and Health Sciences
 - [ ] TUM School of Management
 
-Patches for missing logos are welcome! :)
+Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `dissertation.tex` to get a helper box for the faculty logo placement.
+
 
 ## Usage
 
@@ -54,6 +55,10 @@ Patches for missing logos are welcome! :)
 ### Misc
 - Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure
 - Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions
+
+## TODOs
+
+- [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.)
 
 ## Contributions
 
