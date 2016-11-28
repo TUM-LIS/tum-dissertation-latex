@@ -176,7 +176,7 @@
 
     % TUM logo
     \begin{textblock}{1.89}(18.11, 1)
-        \noindent \includegraphics[height = 10mm]{TUM}
+        \noindent \includegraphics[height = 10mm]{TUM.pdf}
     \end{textblock}
 
 
