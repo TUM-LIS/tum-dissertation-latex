@@ -33,7 +33,7 @@ At the moment, all quadratic logos are supported. These are:
 Status of support for non quadratic logos:
 
 - [ ] TUM School of Life Sciences Weihenstephan
-- [ ] Chemistry
+- [x] Chemistry
 - [x] Informatics
 - [ ] Mechanical Engineering
 - [ ] TUM School of Medicine

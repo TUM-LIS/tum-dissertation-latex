@@ -7,6 +7,11 @@ inkscape --export-pdf=inc/FAK.pdf --export-area-drawing $FAK
 
 # fak logo placement
 case $FAK in
+    *"_CH_"* )
+	echo "Chemistry"
+	place_file="fak_placement_chemistry.tex"
+	;;
+
     *"_IN_"* )
 	echo "Informatics"
 	place_file="fak_placement_informatics.tex"
