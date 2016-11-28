@@ -10,34 +10,37 @@ Made by Andre Richter with help from Michael Vonbun, Christian Herber and Stefan
   - Ubuntu 16.04: `sudo apt-get install texlive texlive-latex-extra inkscape`
 - To circumvent copyright problems, logos must be downloaded and cropped manually.
   - Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
-  - Download the **SVG version** of the blue TUM logo, save it to `inc/` and rename it to `TUM.svg`
-  - Download the **SVG version** of your faculty's logo, save it to `inc/` and rename it to `FAK.svg`
-  - Execute `crop-logos.sh`
+  - Download the **SVG version** of the blue TUM logo and save it to `inc/`.
+  - Download the **SVG version** of your faculty's logo and save it to `inc/`.
+  - Execute `crop_place_logos.sh`
 
 ## Compatibility
 
-At the moment, typesetting of faculty logos only works correctly with logos that are 100% quadratic.
-
-The TUM design guidelines lack explicit statements of what to do with non-quadratic logos. Most likely, they must be centered to the center of each logo's hinted circle, and scale the diameter of the hinted circle to 10mm. Support for non-quadratic logos must be added in the future (patches welcome!).
+The TUM design guidelines lack explicit statements about how to place non-quadratic faculty logos. Each faculty logo has at least a partial circle. Most likely, the logo must be centered to the center of the logo's partial circle, and scale the diameter of the partial circle to 10mm. At least this is what we can derive from looking at page 16 of the [style guide](https://portal.mytum.de/corporatedesign/regeln/index_styleguide/styleguide/Manual_CD_2016_v1).
 
 ### Logo support
 
-Some of the logos are closer to being quadratic than others (e.g. informatics, chemistry), so that typesetting may be acceptable. However, the following list indicates only the 100% quadratic logos.
+At the moment, all quadratic logos are supported. These are:
 
 - [x] Architecture
-- [ ] TUM School of Life Sciences Weihenstephan
-- [ ] Chemistry
 - [x] Civil, Geo and Environmental Engineering
 - [x] Electrical and Computer Engineering
-- [ ] Informatics
 - [x] Mathematics
-- [ ] Mechanical Engineering
-- [ ] TUM School of Medicine Physics
 - [x] Physics
-- [ ] Sport and Health Sciences
 - [x] TUM School of Education
 - [x] TUM School of Governance
+
+Status of support for non quadratic logos:
+
+- [ ] TUM School of Life Sciences Weihenstephan
+- [ ] Chemistry
+- [x] Informatics
+- [ ] Mechanical Engineering
+- [ ] TUM School of Medicine Physics
+- [ ] Sport and Health Sciences
 - [ ] TUM School of Management
+
+Patches for missing logos are welcome! :)
 
 ## Usage
 
@@ -63,6 +66,7 @@ Andre Richter - <andre.richter@tum.de>
 - Appendix support
 - TUM color syntax highlighting for source code listings
 - Siunitx styles
+- Support for non-quadratic faculty logos
 
 Michael Vonbun - <michael.vonbun@tum.de>
 - tumcolors package

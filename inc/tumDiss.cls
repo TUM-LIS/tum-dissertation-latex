@@ -135,6 +135,14 @@
 
     % Layouting helper
     \if@titlepage@showlayout
+      \begin{textblock}{1.05}(1, 0.975) % Logo box with 105% size relative to TUM logo
+          \hspace{0.1cm} \vspace{1.05cm}
+      \end{textblock}
+
+      \begin{textblock}{18}(2.55, 1) % top and bottom margin check for logo and fak text
+          \hspace{0.1cm} \vspace{1cm}
+      \end{textblock}
+
       \begin{textblock}{19}(1, 14.85) % mid
           \noindent\makebox[\hsize]{\rule{\textwidth}{1pt}}
       \end{textblock}
@@ -151,13 +159,10 @@
 
     % Logos
     % FAK logo
-    %                 {hsize}(hpos, vpos)
-    \begin{textblock}{1.05}(1, 0.975)
-        \noindent \includegraphics[height = 10.5mm]{FAK}
-    \end{textblock}
+    \input{inc/fak_placement.tex}
 
     % FAK text
-    \begin{textblock}{10}(2.55, 1.405)
+    \begin{textblock}{12}(2.55, 1.378)
         \footnotesize
         \fontfamily{phv}\selectfont
         \noindent \textcolor{TUMBlue}{
