@@ -1,5 +1,5 @@
 # compiler options
-$pdflatex = 'pdflatex -interaction=batchmode -shell-escape -synctex=1 %O %S';
+$pdflatex = 'TEXINPUTS="./inc//:" pdflatex -interaction=batchmode -shell-escape -synctex=1 %O %S';
 $pdf_mode = 1;
 $bibtex_use = 1;
 
@@ -19,4 +19,4 @@ sub run_makeglossaries {
 # clean up support for glossary and acronym files
 push @generated_exts, 'glo', 'gls', 'glg';
 push @generated_exts, 'acn', 'acr', 'alg';
-$clean_ext .= ' %R.ist %R.xdy';
+$clean_ext .= ' %R.ist %R.xdy synctex.gz';

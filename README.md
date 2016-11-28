@@ -6,8 +6,8 @@ Made by Andre Richter with help from Michael Vonbun, Christian Herber and Stefan
 
 ## Getting started
 
-- Install the latest texlive and inkscape (needed for logo cropping)
-  - Ubuntu 16.04: `sudo apt-get install texlive texlive-latex-extra inkscape`
+- Install the latest texlive, latexmk and inkscape (needed for logo cropping)
+  - Ubuntu 16.04: `sudo apt-get install texlive texlive-latex-extra latexmk inkscape`
 - To circumvent copyright problems, logos must be downloaded and cropped manually.
   - Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
   - Download the **SVG version** of the blue TUM logo and save it to `inc/`.
@@ -48,9 +48,6 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 ### Build using the Makefile:
 - `make`
 - `make clean`
-
-### Build using Latexmk:
-`latexmkrc` configures building glossaries / acronyms and cleanup
 
 ### Misc
 - Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure

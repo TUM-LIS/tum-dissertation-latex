@@ -1,34 +1,13 @@
-PAPER = dissertation
-TEX   = $(wildcard *.tex)
-BIB   = $(wildcard *.bib)
-INC   = TEXINPUTS="./inc//:"
+DISS     = dissertation.tex
 
-.PHONY: text all clean
+TEX      = latexmk
+TEXFLAGS = -recorder -pdf
+TEXCLEAN = -bibtex -c
 
-all: text
+.PHONY: main clean
 
-text: $(TEX) $(BIB)
-	$(INC) pdflatex -shell-escape -synctex=1 -interaction=nonstopmode $(PAPER)
-	bibtex $(PAPER)
-	makeglossaries $(PAPER)
-	$(INC) pdflatex -shell-escape -synctex=1 -interaction=nonstopmode $(PAPER)
-	$(INC) pdflatex -shell-escape -synctex=1 -interaction=nonstopmode $(PAPER)
+main: $(DISS)
+	$(TEX) $(TEXFLAGS) $(DISS)
 
 clean:
-	rm -f	*.acn\
-		*.acr\
-		*.alg\
-		*.aux\
-		*.bib.bak\
-		*.blg\
-		*.glg\
-		*.glo\
-		*.gls\
-		*.gz\
-		*.ist\
-		*.lof\
-		*.log\
-		*.lot\
-		*.out\
-		*.toc\
-	 	*.bbl\
+	$(TEX) $(TEXCLEAN)
