@@ -22,6 +22,11 @@ case $FAK in
 	place_file="fak_placement_mechanical.tex"
 	;;
 
+    *"_MED_"* )
+	echo "Medicine"
+	place_file="fak_placement_medicine.tex"
+	;;
+
     * )
 	echo "Default quadratic"
 	place_file="fak_placement_quadratic.tex"
