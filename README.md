@@ -4,6 +4,8 @@ A Latex template for TUM dissertations/PhD theses that aims to satisfy the new [
 
 Made by Andre Richter with help from Michael Vonbun, Christian Herber and Stefan Wallentowitz.
 
+For a preview of the cover, [click here](#cover-preview). For a full preview, see the [PDF](dissertation.pdf)
+
 ## Getting started
 
 - Install the latest texlive, latexmk and inkscape (needed for logo cropping)
@@ -91,3 +93,9 @@ Stefan Wallentowitz - <stefan.wallentowitz@tum.de>
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 See [license file](LICENSE.md) for details.
+
+## Cover Preview
+
+<kbd>
+![Cover Preview](/../preview/preview.png?raw=true "Cover Preview")
+</kbd>
