@@ -35,7 +35,7 @@ Status of support for non quadratic logos:
 - [ ] TUM School of Life Sciences Weihenstephan
 - [x] Chemistry
 - [x] Informatics
-- [ ] Mechanical Engineering
+- [x] Mechanical Engineering
 - [ ] TUM School of Medicine
 - [ ] Sport and Health Sciences
 - [ ] TUM School of Management
