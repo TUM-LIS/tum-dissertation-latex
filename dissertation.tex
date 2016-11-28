@@ -23,6 +23,46 @@
 ]{tumDiss}
 \usepackage[utf8]{inputenc}
 
+
+
+%-------------------------------------------------------------------------------
+% Faculty
+%-------------------------------------------------------------------------------
+\faculty{Fakultät für Elektrotechnik und Informationstechnik}
+
+%-------------------------------------------------------------------------------
+% Degree
+%-------------------------------------------------------------------------------
+\degree{Doktors der Ingenieurwissenschaften (Dr.-Ing.)}
+
+%-------------------------------------------------------------------------------
+% Title
+%
+% IMPORTANT:
+%
+% You must add manual line breaks here. If you don't, you'll get uneven spacing
+% between the lines.
+% YOU ALSO NEED THE BREAK AT THE LAST LINE.
+%-------------------------------------------------------------------------------
+\title{%
+  This is a Very Long Title With Lots and Lots and Lots of\\
+  Fill Words in Order to Demonstrate how it Looks\\
+}
+% \subtitle{That is extended by using an additional subtitle}
+
+%-------------------------------------------------------------------------------
+% People
+%-------------------------------------------------------------------------------
+\author{Vorname Nachname}
+\vorsitz{Prof. Dr.-Ing. Vorname Nachname}
+\erstpruef{Prof. Dr.-Ing. Vorname Nachname}
+\zweitpruef{Prof. Dr.-Ing. Vorname Nachname}
+
+%-------------------------------------------------------------------------------
+% Hand in date
+%-------------------------------------------------------------------------------
+\date{01.01.2016}
+
 %-------------------------------------------------------------------------------
 % Change language, e.g. to german
 %-------------------------------------------------------------------------------
@@ -137,6 +177,7 @@
 % Include custom packages here
 %-------------------------------------------------------------------------------
 
+% \usepackage{}
 
 %-------------------------------------------------------------------------------
 % TUM CI colors for PGF
@@ -192,40 +233,9 @@
 }
 
 %-------------------------------------------------------------------------------
-% Faculty
+% Correct bad hyphenation here
 %-------------------------------------------------------------------------------
-\faculty{Fakultät für Elektrotechnik und Informationstechnik}
-
-%-------------------------------------------------------------------------------
-% Degree
-%-------------------------------------------------------------------------------
-\degree{Doktors der Ingenieurwissenschaften (Dr.-Ing.)}
-
-%-------------------------------------------------------------------------------
-% IMPORTANT:
-%
-% You must add manual line breaks here. If you don't, you'll get uneven spacing
-% between the lines.
-% YOU ALSO NEED THE BREAK AT THE LAST LINE.
-%-------------------------------------------------------------------------------
-\title{%
-  This is a Very Long Title With Lots and Lots and Lots of\\
-  Fill Words in Order to Demonstrate how it Looks\\
-}
-% \subtitle{That is extended by using an additional subtitle}
-
-%-------------------------------------------------------------------------------
-% People
-%-------------------------------------------------------------------------------
-\author{Vorname Nachname}
-\vorsitz{Prof. Dr.-Ing. Vorname Nachname}
-\erstpruef{Prof. Dr.-Ing. Vorname Nachname}
-\zweitpruef{Prof. Dr.-Ing. Vorname Nachname}
-
-%-------------------------------------------------------------------------------
-% Hand in date
-%-------------------------------------------------------------------------------
-\date{01.01.2016}
+\hyphenation{op-tical net-works semi-conduc-tor}
 
 %-------------------------------------------------------------------------------
 % Acronyms (will be sorted alphabetically)
@@ -242,11 +252,10 @@
 \newacronym{mmu}{MMU}{Memory Management Unit}
 \glsadd{mmu}
 
-%-------------------------------------------------------------------------------
-% Correct bad hyphenation here
-%-------------------------------------------------------------------------------
-\hyphenation{op-tical net-works semi-conduc-tor}
 
+
+%-------------------------------------------------------------------------------
+% Actual document starts here
 %-------------------------------------------------------------------------------
 \begin{document}
 \frontmatter
@@ -268,8 +277,6 @@
 
 
 
-%-------------------------------------------------------------------------------
-% TOC, figure and table lists, acronyms
 %-------------------------------------------------------------------------------
 \tableofcontents
 \listoffigures
