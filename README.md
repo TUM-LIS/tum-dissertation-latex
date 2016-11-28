@@ -56,6 +56,7 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 ## TODOs
 
 - [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.)
+- [ ] Windows support?
 
 ## Contributions
 
