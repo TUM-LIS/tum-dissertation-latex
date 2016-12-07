@@ -10,6 +10,8 @@ RUN apt-get update -q &&                       \
     latexmk                                    \
     inkscape
 
+RUN apt-get clean autoclean
+
 VOLUME ["/diss"]
 
 WORKDIR /diss
