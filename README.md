@@ -2,9 +2,9 @@
 
 An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html).
 
-Made by Andre Richter with help from Michael Vonbun, Christian Herber and Stefan Wallentowitz.
+Made by Andre Richter with help from [his colleagues](#contributions).
 
-For a preview of the cover, [click here](#cover-preview). For a full preview, see the [PDF](dissertation.pdf)
+For a preview of the cover, [click here](#cover-preview). For a full preview, see the [PDF](dissertation.pdf).
 
 ## Getting started
 
@@ -12,8 +12,8 @@ The following instructions should work with both Linux and macOS, because a Dock
 
 1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded and cropped manually.
   1. Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
-  2. Download the **SVG version** of the blue TUM logo and save it to `inc/`.
-  3. Download the **SVG version** of your faculty's logo and save it to `inc/`.
+  2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
+  3. Download the **SVG version** of your faculty's logo and save it to `inc/`
 2. The easy way to go from here is to use the supplied Docker image for building the PDF, because it relieves you from all the dependency hassle. Find your install instructions or binaries for Docker here:
   - https://www.docker.com/products/overview#/install_the_platform
 3. Once Docker is installed, logos must be cropped.
@@ -27,8 +27,8 @@ If everything worked, your setup is complete now and you are good to go!
 
 Inside a terminal, execute
 
-- `make` to build the pdf
-- `make clean` to clean up temporary files
+- `make` to build the pdf.
+- `make clean` to clean up temporary files.
 
 ## Troubleshooting
 
@@ -66,12 +66,12 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 ## Template Usage
 
 - At the top of `dissertation.tex`, you'll find parameters for the titlepage, e.g. names, faculty name, dissertation title, etc.
-- Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure
-- Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions
+- Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure.
+- Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions.
 
 ## TODOs
 
-- [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.)
+- [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.).
 - [ ] Windows support?
 
 ## Building without Docker
