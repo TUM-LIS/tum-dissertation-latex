@@ -25,7 +25,7 @@ If everything worked, your setup is complete now and you are good to go!
 
 ## Building the PDF
 
-Inside a terminal, execute
+In a terminal, execute
 
 - `make` to build the pdf.
 - `make clean` to clean up temporary files.
