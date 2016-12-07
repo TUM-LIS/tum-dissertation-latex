@@ -8,20 +8,20 @@ For a preview of the cover, [click here](#cover-preview). For a full preview, se
 
 ## Getting started
 
-The following instructions should work with both Linux and macOS, because a Docker image is used that already provides the build environment.
+The following instructions should work with both Linux and macOS, because a Docker image is used that already provides the whole build environment.
 
-1. First of all, we need logos. To circumvent copyright problems, they must be downloaded and cropped manually.
+1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded and cropped manually.
   1. Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
   2. Download the **SVG version** of the blue TUM logo and save it to `inc/`.
   3. Download the **SVG version** of your faculty's logo and save it to `inc/`.
 2. The easy way to go from here is to use the supplied Docker image for building the PDF, because it relieves you from all the dependency hassle. Find your install instructions or binaries for Docker here:
-  - https://www.docker.com/products/overview
+  - https://www.docker.com/products/overview#/install_the_platform
 3. Once Docker is installed, logos must be cropped.
   1. Start a terminal/console and navigate where you saved the repository.
   2. Execute `make crop`
     - _This command will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
 
-If everything worked, your setup is complete now.
+If everything worked, your setup is complete now and you are good to go!
 
 ## Building the PDF
 
