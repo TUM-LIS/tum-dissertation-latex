@@ -1,4 +1,4 @@
-# LaTeX template for TUM dissertations
+# LaTeX template for TUM dissertations/PhD theses
 
 An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html).
 
@@ -84,7 +84,6 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 ## TODOs
 
 - [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.).
-- [ ] Windows support?
 
 ## Building without Docker
 
