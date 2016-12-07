@@ -1,6 +1,6 @@
 # LaTeX template for TUM dissertations
 
-A Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html).
+An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html).
 
 Made by Andre Richter with help from Michael Vonbun, Christian Herber and Stefan Wallentowitz.
 
@@ -8,13 +8,31 @@ For a preview of the cover, [click here](#cover-preview). For a full preview, se
 
 ## Getting started
 
-- Install the latest texlive, latexmk and inkscape (needed for logo cropping)
-  - Ubuntu 16.04: `sudo apt-get install texlive texlive-latex-extra latexmk inkscape`
-- To circumvent copyright problems, logos must be downloaded and cropped manually.
-  - Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
-  - Download the **SVG version** of the blue TUM logo and save it to `inc/`.
-  - Download the **SVG version** of your faculty's logo and save it to `inc/`.
-  - Execute `crop_place_logos.sh`
+The following instructions should work with both Linux and macOS, because a Docker image is used that already provides the whole build environment.
+
+1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded and cropped manually.
+  1. Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
+  2. Download the **SVG version** of the blue TUM logo and save it to `inc/`.
+  3. Download the **SVG version** of your faculty's logo and save it to `inc/`.
+2. The easy way to go from here is to use the supplied Docker image for building the PDF, because it relieves you from all the dependency hassle. Find your install instructions or binaries for Docker here:
+  - https://www.docker.com/products/overview#/install_the_platform
+3. Once Docker is installed, logos must be cropped.
+  1. Start a terminal/console and navigate where you saved the repository.
+  2. Execute `make crop`
+    - _This command will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
+
+If everything worked, your setup is complete now and you are good to go!
+
+## Building the PDF
+
+Inside a terminal, execute
+
+- `make` to build the pdf
+- `make clean` to clean up temporary files
+
+## Troubleshooting
+
+- If you get errors one the `make` commands, you can try to invoke them via sudo, e.g. `sudo make crop`
 
 ## Compatibility
 
@@ -45,13 +63,9 @@ Status of support for non quadratic logos:
 Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `dissertation.tex` to get a helper box for the faculty logo placement.
 
 
-## Usage
+## Template Usage
 
-### Build using the Makefile:
-- `make`
-- `make clean`
-
-### Misc
+- At the top of `dissertation.tex`, you'll find parameters for the titlepage, e.g. names, faculty name, dissertation title, etc.
 - Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure
 - Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions
 
@@ -59,6 +73,11 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 
 - [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.)
 - [ ] Windows support?
+
+## Building without Docker
+
+Users who want to build without Docker most likely know what to do. Dependencies can be found inside `Dockerfile`.
+The `Makefile` already has targets for building without docker, just make them default.
 
 ## Contributions
 
@@ -85,6 +104,9 @@ Christian Herber - <christian.herber@tum.de>
 
 Stefan Wallentowitz - <stefan.wallentowitz@tum.de>
 - Prevent orphans and widows
+
+Andreas Oeldemann - <andreas.oeldemann@tum.de>
+- Help with Docker support.
 
 ## License
 

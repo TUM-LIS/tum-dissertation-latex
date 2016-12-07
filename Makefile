@@ -4,10 +4,25 @@ TEX      = latexmk
 TEXFLAGS = -recorder -pdf
 TEXCLEAN = -bibtex -c
 
-.PHONY: main clean
+DOCKER   = docker run -it --rm -v $(shell pwd):/diss \
+	   andrerichter/tum-dissertation-latex
 
-main: $(DISS)
-	$(TEX) $(TEXFLAGS) $(DISS)
+.PHONY: docker clean crop pdf-local clean-local crop-local
+
+docker: $(DISS)
+	 $(DOCKER) make pdf-local
 
 clean:
+	$(DOCKER) make clean-local
+
+crop:
+	$(DOCKER) make crop-local
+
+pdf-local: $(DISS)
+	$(TEX) $(TEXFLAGS) $(DISS)
+
+clean-local:
 	$(TEX) $(TEXCLEAN)
+
+crop-local:
+	./crop_place_logos.sh
