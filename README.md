@@ -8,30 +8,42 @@ For a preview of the cover, [click here](#cover-preview). For a full preview, se
 
 ## Getting started
 
-The following instructions should work with both Linux and macOS, because a Docker image is used that already provides the whole build environment.
+The following instructions work with Linux, macOS and Windows, because a Docker image is used that provides the whole build environment.
 
 1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded and cropped manually.
   1. Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
   2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
   3. Download the **SVG version** of your faculty's logo and save it to `inc/`
-2. The easy way to go from here is to use the supplied Docker image for building the PDF, because it relieves you from all the dependency hassle. Find your install instructions or binaries for Docker here:
-  - https://www.docker.com/products/overview#/install_the_platform
-3. Once Docker is installed, logos must be cropped.
-  1. Start a terminal/console and navigate where you saved the repository.
-  2. Execute `make crop`
-    - _This command will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
+2. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/products/overview#/install_the_platform)
+  - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#/shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
+3. Once Docker is installed, logos must be cropped and placed.
+  1. Start a terminal/console/command and navigate where you saved the repository.
+  2. Linux/macOS: Execute `make crop`
+  3. Windows: Execute `make.bat crop`
+
+_The command in the last step will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
 
 If everything worked, your setup is complete now and you are good to go!
 
 ## Building the PDF
 
+### Linux/macOS
 In a terminal, execute
 
 - `make` to build the pdf.
 - `make clean` to clean up temporary files.
 
+### Windows
+In a cmd or powershell, execute
+
+- `make.bat` to build the pdf.
+- `make.bat clean` to clean up temporary files.
+
+*Double-clicking `make.bat` in the explorer also builds the pdf.*
+
 ## Troubleshooting
 
+### Linux/macOS
 - If you get errors one the `make` commands, you can try to invoke them via sudo, e.g. `sudo make crop`
 
 ## Compatibility
@@ -76,7 +88,7 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 
 ## Building without Docker
 
-Users who want to build without Docker most likely know what to do. Dependencies can be found inside `Dockerfile`.
+Linux/macOS users who want to build without Docker most likely know what to do. Dependencies can be found inside `Dockerfile`.
 The `Makefile` already has targets for building without docker, just make them default.
 
 ## Contributions
