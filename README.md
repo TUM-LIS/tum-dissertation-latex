@@ -1,6 +1,6 @@
 # LaTeX template for TUM dissertations/PhD theses
 
-An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html).
+An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html) regarding titlepage header and color usage.
 
 Made by Andre Richter with help from [his colleagues](#contributions).
 
