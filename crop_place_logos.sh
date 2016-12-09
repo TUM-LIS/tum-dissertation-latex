@@ -12,6 +12,11 @@ case $FAK in
 	place_file="fak_placement_chemistry.tex"
 	;;
 
+    *"_SP_"* )
+	echo "Health"
+	place_file="fak_placement_health.tex"
+	;;
+
     *"_IN_"* )
 	echo "Informatics"
 	place_file="fak_placement_informatics.tex"
@@ -25,6 +30,11 @@ case $FAK in
     *"_MED_"* )
 	echo "Medicine"
 	place_file="fak_placement_medicine.tex"
+	;;
+
+    *"_SOM_"* )
+	echo "SOM"
+	place_file="fak_placement_som.tex"
 	;;
 
     * )

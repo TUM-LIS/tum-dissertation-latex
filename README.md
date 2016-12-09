@@ -50,31 +50,6 @@ In a cmd or powershell, execute
 
 The TUM design guidelines lack explicit statements about how to place non-quadratic faculty logos. Each faculty logo has at least a partial circle. Most likely, the logo must be centered to the center of the logo's partial circle, and scale the diameter of the partial circle to 10mm. At least this is what we can derive from looking at page 16 of the [style guide](https://portal.mytum.de/corporatedesign/regeln/index_styleguide/styleguide/Manual_CD_2016_v1).
 
-### Logo support
-
-At the moment, all quadratic logos are supported. These are:
-
-- [x] Architecture
-- [x] Civil, Geo and Environmental Engineering
-- [x] Electrical and Computer Engineering
-- [x] Mathematics
-- [x] Physics
-- [x] TUM School of Education
-- [x] TUM School of Governance
-
-Status of support for non quadratic logos:
-
-- [ ] TUM School of Life Sciences Weihenstephan
-- [x] Chemistry
-- [x] Informatics
-- [x] Mechanical Engineering
-- [x] TUM School of Medicine
-- [ ] Sport and Health Sciences
-- [ ] TUM School of Management
-
-Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `dissertation.tex` to get a helper box for the faculty logo placement.
-
-
 ## Template Usage
 
 - At the top of `dissertation.tex`, you'll find parameters for the titlepage, e.g. names, faculty name, dissertation title, etc.
@@ -84,6 +59,7 @@ Patches for missing logos are welcome! Turn on the `layouttitlepage` option in `
 ## TODOs
 
 - [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.).
+- [ ] Improve the windows batch file. 
 
 ## Building without Docker
 
