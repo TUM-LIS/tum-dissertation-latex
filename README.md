@@ -46,20 +46,21 @@ In a cmd or powershell, execute
 ### Linux/macOS
 - If you get errors one the `make` commands, you can try to invoke them via sudo, e.g. `sudo make crop`
 
+## Template Usage
+
+- At the top of `dissertation.tex`, you'll find parameters for the titlepage, e.g. names, faculty name, dissertation title, etc.
+  - Also, have a look at the two binding correction options!
+- Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure.
+- Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions.
+
 ## Compatibility
 
 The TUM design guidelines lack explicit statements about how to place non-quadratic faculty logos. Each faculty logo has at least a partial circle. Most likely, the logo must be centered to the center of the logo's partial circle, and scale the diameter of the partial circle to 10mm. At least this is what we can derive from looking at page 16 of the [style guide](https://portal.mytum.de/corporatedesign/regeln/index_styleguide/styleguide/Manual_CD_2016_v1).
 
-## Template Usage
-
-- At the top of `dissertation.tex`, you'll find parameters for the titlepage, e.g. names, faculty name, dissertation title, etc.
-- Use `\captionabove{}` instead of `\caption{}` if you place a caption above a figure.
-- Easy usage of TUM CI colors is provided by the tumcolors package. See `doc/tumcolor.pdf` for instructions.
-
 ## TODOs
 
 - [ ] Error handling in `crop_place_logos.sh` (missing binaries, files not found, etc.).
-- [ ] Improve the windows batch file. 
+- [ ] Improve the windows batch file.
 
 ## Building without Docker
 

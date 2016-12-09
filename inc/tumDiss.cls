@@ -59,13 +59,15 @@
 
 % --- Titlepage
 % The title page is fully centered.
+\def\titlepagebindingcor#1{\def\@titlepagebindingcor{#1}}
+\def\@titlepagebindingcor{0mm}
 \RequirePackage{calc}%
 
 \def\TUMLogoWidth{19mm}
 
 % Left and right margins are exactly the same.
 \def\defaultwidth{150mm}%
-\def\defaulthpos{30mm}%
+\def\defaulthpos{30mm + \@titlepagebindingcor}%
 
 % Vertical positions of title page entities
 \def\titlevpos{100.2mm}%
@@ -135,6 +137,7 @@
     \fi
 
 
+
     % Logos
     % FAK logo
     \input{inc/fak_placement.tex}
@@ -142,7 +145,7 @@
     % FAK text
     %                         See TUM CD Handbook page 16
     %                         x    + x    + 0.5x
-    \begin{textblock*}{120mm}(10mm + 10mm + 5mm, 13.78mm)
+    \begin{textblock*}{120mm}(10mm + 10mm + 5mm + \@titlepagebindingcor, 13.78mm)
         \footnotesize
         \fontfamily{phv}\selectfont
         \noindent \textcolor{TUMBlue}{

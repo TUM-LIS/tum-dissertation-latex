@@ -25,11 +25,24 @@
 
 
 %-------------------------------------------------------------------------------
-% Binding correction.
+% Binding correction for the title page.
+% WARNING: ONLY NEEDED FOR THE PRINT VERSION!
+%
+% After printing and binding, the left part of the titlepage may lose
+% significant space, for example due to overlap from glue binding.
+% You can add a left-shift of the title page with this option.
+% This value of 11mm was measured for glue binding a thesis that was printed by
+% the TUM Fachschaft EI.
+%-------------------------------------------------------------------------------
+% \titlepagebindingcor{11mm}
+
+%-------------------------------------------------------------------------------
+% Binding correction for everything else.
+% Does not affect titlePageBindingCor!
 %
 % WARNING: THIS OPTION CAN SHAKE UP YOUR CURRENT LAYOUT.
-% If you want to use it, its best to work with it from the very start. Adding it
-% when finishing your dissertation might get you into trouble.
+% If you want to use it, it is best to work with it from the very start. Adding
+% it when finishing your dissertation might get you into trouble.
 %
 % Search http://texdoc.net/texmf-dist/doc/latex/koma-script/scrguien.pdf for
 % "BCOR" for further reading.
