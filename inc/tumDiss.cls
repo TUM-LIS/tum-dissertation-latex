@@ -112,12 +112,12 @@
     % Layouting helper
     \if@titlepage@showlayout
       % Logo box with 105% size rel. to TUM logo
-      \begin{textblock*}{10.5mm}(10mm, 9.75mm)
+      \begin{textblock*}{10.5mm}(9.75mm, 9.75mm)
           \hspace{1mm} \vspace{10.5mm}
       \end{textblock*}
 
       % top and bottom margin check for logo and fak text
-      \begin{textblock*}{180mm}(25.5mm, 10mm)
+      \begin{textblock*}{180mm}(25mm, 10mm)
           \hspace{1mm} \vspace{10mm}
       \end{textblock*}
 
@@ -141,8 +141,8 @@
 
     % FAK text
     %                         See TUM CD Handbook page 16
-    %                         x    + 1.05x  + 0.5x
-    \begin{textblock*}{120mm}(10mm + 10.5mm + 5mm, 13.78mm)
+    %                         x    + x    + 0.5x
+    \begin{textblock*}{120mm}(10mm + 10mm + 5mm, 13.78mm)
         \footnotesize
         \fontfamily{phv}\selectfont
         \noindent \textcolor{TUMBlue}{
