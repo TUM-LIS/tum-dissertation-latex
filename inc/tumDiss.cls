@@ -7,8 +7,6 @@
 \newif\if@tumtext@sansserif
 \DeclareOption{seriftitlepage}{\@titlepage@sansseriffalse}%
 \DeclareOption{sansseriftitlepage}{\@titlepage@sansseriftrue}%
-\DeclareOption{seriftumtext}{\@tumtext@sansseriffalse}%
-\DeclareOption{sansseriftumtext}{\@tumtext@sansseriftrue}%
 % title page layout lines
 \newif\if@titlepage@showlayout
 \DeclareOption{layouttitlepage}{\@titlepage@showlayouttrue}
@@ -16,7 +14,7 @@
 % pass remaining options to scrbook class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}%
 % default options
-\ExecuteOptions{seriftitlepage,seriftumtext,nolayouttitlepage}%
+\ExecuteOptions{seriftitlepage,nolayouttitlepage}%
 \ProcessOptions\relax
 
 % --- Derive from class scrbook
@@ -32,28 +30,6 @@
                                    % This option prevents this and makes it
                                    % "Figure 3.9: XXX" as it should be
 ]{scrbook}%
-
-% --- Load packages
-% sans serif title page
-% computer modern sans serif does not have a small capitals font (which
-% is used for setting the TUM Text)
-%    http://tex.stackexchange.com/questions/16740/small-caps-with-cmss
-% The default behavior is, that TUM text is typeset using CM serif
-% If you wish, these are set also sans serif by switching to a different font
-%    http://www.linuxlibertine.org/index.php
-\if@titlepage@sansserif
-  \if@tumtext@sansserif
-    \IfFileExists{libertine.sty}{%
-      \RequirePackage[T1]{fontenc}%
-      \RequirePackage{libertine}%
-    }{%
-      \ClassWarningNoLine{tumDiss}{%
-        Missing package <libertine>.
-        Sans serif option 'seriftumtext' will be ignored.
-      }%
-    }%
-  \fi
-\fi
 
 % use manual text positioning on title page
 \if@titlepage@showlayout
