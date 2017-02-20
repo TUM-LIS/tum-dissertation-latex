@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Andre Richter <andre.richter@tum.de>
 
 RUN apt-get update -q &&                       \
