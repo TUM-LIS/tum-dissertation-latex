@@ -6,6 +6,9 @@ Made by Andre Richter with help from [his colleagues](#contributions).
 
 For a preview of the cover, [click here](#cover-preview). For a full preview, see the [PDF](dissertation.pdf).
 
+##### Docker image info
+[![](https://images.microbadger.com/badges/image/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex)
+
 ## Getting started
 
 The following instructions work with Linux, macOS and Windows, because a Docker image is used that provides the whole build environment.
