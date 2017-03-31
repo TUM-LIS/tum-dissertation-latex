@@ -110,5 +110,6 @@ See [license file](LICENSE.md) for details.
 ## Cover Preview
 
 <kbd>
-![Cover Preview](/../preview/preview.png?raw=true "Cover Preview")
+
+![Cover Preview](/../preview/preview.png?raw=true "Cover Preview") 
 </kbd>
