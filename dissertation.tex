@@ -31,10 +31,10 @@
 % After printing and binding, the left part of the titlepage may lose
 % significant space, for example due to overlap from glue binding.
 % You can increase the left margin of the title page with this option.
-% This value of 11mm was measured for glue binding a thesis that was printed by
-% the TUM Fachschaft EI.
+% This value of 8mm was measured for glue binding a thesis that was printed by
+% the TUM Fachschaft EI and ~140 pages.
 %-------------------------------------------------------------------------------
-% \titlepagebindingcor{11mm}
+% \titlepagebindingcor{8mm}
 
 %-------------------------------------------------------------------------------
 % Binding correction for everything else.
@@ -82,12 +82,27 @@
 \author{Vorname Nachname}
 \vorsitz{Prof. Dr.-Ing. Vorname Nachname}
 \erstpruef{Prof. Dr.-Ing. Vorname Nachname}
-\zweitpruef{Prof. Dr.-Ing. Vorname Nachname}
+
+% Use this one for a TUM professor
+% \zweitpruef{Prof. Dr.-Ing. Vorname Nachname}
+
+% Or this one for an external professor
+\zweitpruef[Technische Universität Berlin]{Prof. Dr.-Ing. Vorname Nachname}
 
 %-------------------------------------------------------------------------------
 % Hand in date
 %-------------------------------------------------------------------------------
 \date{01.01.2016}
+
+%-------------------------------------------------------------------------------
+% Accepted date
+%
+% You can set this after your thesis was accepted. For handing in,
+% it is not needed (at least for the Electrical Engineering faculty).
+%-------------------------------------------------------------------------------
+\dateaccepted{10.05.2016}
+
+
 
 %-------------------------------------------------------------------------------
 % Change language, e.g. to german
