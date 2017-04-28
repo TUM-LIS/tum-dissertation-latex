@@ -51,11 +51,27 @@
 
 % --- Document properties
 % parameters as set by the main file.
-\def\faculty#1{\def\@faculty{#1}}
-\def\degree#1{\def\@degree{#1}}
-\def\vorsitz#1{\def\@vorsitz{#1}}
-\def\erstpruef#1{\def\@erstpruef{#1}}
-\def\zweitpruef#1{\def\@zweitpruef{#1}}
+\newcommand{\faculty}[1]{\def\@faculty{#1}}
+\newcommand{\degree}[1]{\def\@degree{#1}}
+\newcommand{\vorsitz}[1]{\def\@vorsitz{#1}}
+\newcommand{\erstpruef}[1]{\def\@erstpruef{#1}}
+
+\newif\ifzweitpruefaffil
+\newcommand{\zweitpruef}[2][]{
+  \def\@zweitpruef{#2}
+  \ifx#1\empty\else
+    \def\@zweitpruefaffil{#1}
+    \zweitpruefaffiltrue
+  \fi
+}
+
+\newif\ifdateaccepted
+\newcommand{\dateaccepted}[1]{
+  \ifx#1\empty\else
+    \def\@dateaccepted{#1}
+    \dateacceptedtrue
+  \fi
+}
 
 % --- Titlepage
 % The title page is fully centered.
@@ -207,13 +223,16 @@
         \raggedright
 
         \textbf{Vorsitzender:}\\
-        \hspace{8mm} \@vorsitz
+        \hspace{8mm}\hphantom{1. }\@vorsitz
 
         \vspace{2mm}
 
         \textbf{Pr\"ufende der Dissertation:}\\
-        \hspace{8mm} \@erstpruef\\
-        \hspace{8mm} \@zweitpruef
+        \hspace{8mm}1. \@erstpruef\\
+        \hspace{8mm}2. \@zweitpruef
+        \ifzweitpruefaffil
+          ,\\\hspace{8mm}\hphantom{2. }\@zweitpruefaffil
+        \fi
 
     \end{textblock*}
 
@@ -224,7 +243,11 @@
         \raggedright
 
         Die Dissertation wurde am {\@date} bei der Technischen Universit\"at
-        M\"unchen eingereicht und durch die {\@faculty} angenommen.
+        M\"unchen eingereicht und durch die {\@faculty}
+        \ifdateaccepted
+          am {\@dateaccepted }
+        \fi
+        angenommen.
 
     \end{textblock*}
 
