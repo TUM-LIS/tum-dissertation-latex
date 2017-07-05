@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-inkscape --export-pdf=inc/TUM.pdf --export-area-drawing inc/TUM_Logo_blau_rgb_s*
+if [ -f inc/TUM_Logo_blau_rgb_s ]
+then
+    mv inc/TUM_Logo_blau_rgb_s inc/TUM_Logo_blau_rgb_s.svg
+fi
 
-FAK=(inc/FAK_*.svg)
+inkscape --export-pdf=inc/TUM.pdf --export-area-drawing inc/TUM_Logo_blau_rgb*
+
+FAK=(inc/FAK_*)
 inkscape --export-pdf=inc/FAK.pdf --export-area-drawing $FAK
 
 # fak logo placement
