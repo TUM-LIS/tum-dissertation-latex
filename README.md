@@ -17,7 +17,7 @@ The following instructions work with Linux, macOS and Windows, because a Docker 
     1. Login at https://portal.mytum.de/corporatedesign/vorlagen/index_Logos
     2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
     3. Download the **SVG version** of your faculty's logo and save it to `inc/`
-    4. If the above link did not work for you, e.g. you could not see or access the logos, please refer to the section [Link list of logo resources](#Link-list-of-logo-resources) at the bottom of this readme. They provide alternative links that may work.
+    4. If the above link did not work for you, e.g. you could not see or access the logos, please refer to the section [Link list of logo resources](#link-list-of-logo-resources) at the bottom of this readme. They provide alternative links that may work.
 2. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download)
     - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
 3. Once Docker is installed, logos must be cropped and placed.
