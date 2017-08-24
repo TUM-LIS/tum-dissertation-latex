@@ -13,17 +13,16 @@ For a preview of the cover, [click here](#cover-preview). For a full preview, se
 
 The following instructions work with Linux, macOS and Windows, because a Docker image is used that provides the whole build environment.
 
-1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded using your TUM login and cropped manually.
+1. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download)
+    - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
+2. Logos are needed for the cover. To circumvent copyright problems, they must be downloaded using your TUM login and cropped manually. You can skip this for now, and run `make placeholder` (or `make.bat placeholder` under Windows) to use placeholders. But eventually you need to get the logos:
     1. Login at https://portal.mytum.de/corporatedesign/vorlagen/index_Logos
     2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
     3. Download the **SVG version** of your faculty's logo and save it to `inc/`
     4. If the above link did not work for you, e.g. you could not see or access the logos, please refer to the section [Link list of logo resources](#link-list-of-logo-resources) at the bottom of this readme. They provide alternative links that may work.
-2. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download)
-    - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
-3. Once Docker is installed, logos must be cropped and placed.
-  1. Start a terminal/console/command and navigate where you saved the repository.
-  2. Linux/macOS: Execute `make crop`
-  3. Windows: Execute `make.bat crop`
+    5. Start a terminal/console/command and navigate where you saved the repository.
+        1. Linux/macOS: Execute `make crop`
+        2. Windows: Execute `make.bat crop`
 
 _The command in the last step will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
 
