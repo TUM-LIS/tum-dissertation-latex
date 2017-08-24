@@ -65,6 +65,19 @@
   \fi
 }
 
+\newif\ifdrittpruefset
+\newif\ifdrittpruefaffil
+\newcommand{\drittpruef}[2][]{
+  \ifx#2\empty\else
+    \drittpruefsettrue
+    \def\@drittpruef{#2}
+    \ifx#1\empty\else
+      \def\@drittpruefaffil{#1}
+      \drittpruefaffiltrue
+    \fi
+  \fi
+}
+
 \newif\ifdateaccepted
 \newcommand{\dateaccepted}[1]{
   \ifx#1\empty\else
@@ -232,6 +245,12 @@
         \hspace{8mm}2. \@zweitpruef
         \ifzweitpruefaffil
           ,\\\hspace{8mm}\hphantom{2. }\@zweitpruefaffil
+        \fi
+        \ifdrittpruefset
+          \\\hspace{8mm}3. \@drittpruef
+          \ifdrittpruefaffil
+            ,\\\hspace{8mm}\hphantom{2. }\@drittpruefaffil
+          \fi
         \fi
 
     \end{textblock*}
