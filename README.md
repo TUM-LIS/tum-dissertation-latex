@@ -13,16 +13,16 @@ For a preview of the cover, [click here](#cover-preview). For a full preview, se
 
 The following instructions work with Linux, macOS and Windows, because a Docker image is used that provides the whole build environment.
 
-1. First of all, logos are needed. To circumvent copyright problems, they must be downloaded and cropped manually.
-  1. Login at https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_Logos
-  2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
-  3. Download the **SVG version** of your faculty's logo and save it to `inc/`
-2. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/products/overview#/install_the_platform)
-  - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#/shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
-3. Once Docker is installed, logos must be cropped and placed.
-  1. Start a terminal/console/command and navigate where you saved the repository.
-  2. Linux/macOS: Execute `make crop`
-  3. Windows: Execute `make.bat crop`
+1. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download)
+    - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
+2. Logos are needed for the cover. To circumvent copyright problems, they must be downloaded using your TUM login and cropped manually. You can skip this for now, and run `make placeholder` (or `make.bat placeholder` under Windows) to use placeholders. But eventually you need to get the logos:
+    1. Login at https://portal.mytum.de/corporatedesign/vorlagen/index_Logos
+    2. Download the **SVG version** of the blue TUM logo and save it to `inc/`
+    3. Download the **SVG version** of your faculty's logo and save it to `inc/`
+    4. If the above link did not work for you, e.g. you could not see or access the logos, please refer to the section [Link list of logo resources](#link-list-of-logo-resources) at the bottom of this readme. They provide alternative links that may work.
+    5. Start a terminal/console/command and navigate where you saved the repository.
+        1. Linux/macOS: Execute `make crop`
+        2. Windows: Execute `make.bat crop`
 
 _The command in the last step will first pull the Docker image from remote, which will take a couple of minutes. Fortunately, this must only be done once._
 
@@ -69,6 +69,25 @@ The TUM design guidelines lack explicit statements about how to place non-quadra
 
 Linux/macOS users who want to build without Docker most likely know what to do. Dependencies can be found inside `Dockerfile`.
 The `Makefile` already has targets for building without docker, just make them default.
+
+## Link list of logo resources
+
+- [TUM Logo](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/TUM_Logo_blau_rgb_s)
+
+- [Architektur](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_AR_RGB_s.svg)
+- [Bau Geo Umwelt](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_BGU_RGB_s.svg)
+- [Chemie](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_CH_RGB_s.svg)
+- [Elektrotechnik und Informationstechnik](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_EI_RGB_s.svg)
+- [Hochschule für Politik München](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_HFP_RGB_s.svg)
+- [Informatik](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_IN_RGB_s.svg)
+- [Maschinenwesen](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_MW_RGB_s.svg)
+- [Mathematik](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_MA_RGB_s.svg)
+- [Medizin](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_MED_RGB_s.svg)
+- [Physik](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_PH_RGB_s.svg)
+- [TUM School of Education](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_SE_RGB_s.svg)
+- [Sport- und Gesundheitswissenschaften](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_SP_RGB_s.svg)
+- [TUM School of Management](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_SOM_RGB_s.svg)
+- [Wissenschaftszentrum Weihenstephan](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/FAK_WZW_RGB_s.svg)
 
 ## Contributions
 
