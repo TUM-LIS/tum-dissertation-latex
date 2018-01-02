@@ -2,18 +2,26 @@
 
 An _unofficial_ Latex template for TUM dissertations/PhD theses that aims to satisfy the new [2016 corporate design guidelines of the TUM](https://portal.mytum.de/corporatedesign/index_html) regarding titlepage header and color usage.
 
-Made by Andre Richter with help from [his colleagues](#contributions).
+Made by [Andre Richter](https://github.com/andre-richter) with help from [his colleagues](#contributions).
 
-For a preview of the cover, [click here](#cover-preview). For a full preview, see the [PDF](dissertation.pdf).
+For a preview of the cover, [click here](#cover-preview). For a full preview, see either the template [PDF](dissertation.pdf) or have a look at already published dissertations in the [Hall of Fame](/doc/hall_of_fame.md).
+
+## Hall of Fame
+
+If you used the template to publish your dissertation, we'd be super happy if you reference yourself in the [Hall of Fame](/doc/hall_of_fame.md). Just create a pull request or an issue.
+
+The Hall of Fame is also a great resource for previewing the template and getting inspired regarding style.
+
+## Getting started
+
+The following instructions work with Linux, macOS and Windows, because a **Docker** image is used that provides the whole build environment.
 
 ##### Docker image info
 [![](https://images.microbadger.com/badges/image/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex)
 
-## Getting started
+### Step by step
 
-The following instructions work with Linux, macOS and Windows, because a Docker image is used that provides the whole build environment.
-
-1. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download)
+1. Install Docker on your system. Find install instructions or binaries for your OS [here](https://www.docker.com/community-edition#/download).
     - Windows users only: [Share the local drive](https://docs.docker.com/docker-for-windows/#shared-drives). Right-click on the Docker icon in the bottom right gives you access to the settings.
 2. Logos are needed for the cover. To circumvent copyright problems, they must be downloaded using your TUM login and cropped manually. You can skip this for now, and run `make placeholder` (or `make.bat placeholder` under Windows) to use placeholders. But eventually you need to get the logos:
     1. Login at https://portal.mytum.de/corporatedesign/vorlagen/index_Logos
