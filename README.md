@@ -17,7 +17,7 @@ The Hall of Fame is also a great resource for previewing the template and gettin
 The following instructions work with Linux, macOS and Windows, because a **Docker** image is used that provides the whole build environment.
 
 ##### Docker image info
-[![](https://images.microbadger.com/badges/image/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex)
+[![](https://images.microbadger.com/badges/version/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex) [![](https://images.microbadger.com/badges/commit/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex) [![](https://images.microbadger.com/badges/image/andrerichter/tum-dissertation-latex.svg)](https://microbadger.com/images/andrerichter/tum-dissertation-latex)
 
 ### Step by step
 
@@ -138,5 +138,5 @@ See [license file](LICENSE.md) for details.
 
 <kbd>
 
-![Cover Preview](/../preview/preview.png?raw=true "Cover Preview") 
+![Cover Preview](/../preview/preview.png?raw=true "Cover Preview")
 </kbd>
