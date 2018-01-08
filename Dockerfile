@@ -2,6 +2,13 @@ FROM ubuntu:16.04
 MAINTAINER Andre Richter <andre.richter@tum.de>
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.build-date=$BUILD_DATE                                          \
+      org.label-schema.vcs-url="https://github.com/TUM-LIS/tum-dissertation-latex.git" \
+      org.label-schema.vcs-ref=$VCS_REF                                                \
+      org.label-schema.schema-version="1.0"
 
 RUN set -x;                                       \
     apt-get update -q -y;                         \
