@@ -55,7 +55,7 @@ In a cmd or powershell, execute
 ## Troubleshooting
 
 ### Linux/macOS
-- If you get errors one the `make` commands, you can try to invoke them via sudo, e.g. `sudo make crop`
+- If you get errors on the `make` commands, you can try to invoke them via sudo, e.g. `sudo make crop`
 
 ## Template Usage
 
