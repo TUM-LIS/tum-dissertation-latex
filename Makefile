@@ -1,4 +1,17 @@
+# set your dissertation main file here
 DISS     = dissertation.tex
+
+# automatic main file detection
+NUMMAINS = $(shell grep --files-with-matches --exclude="_*_.tex" \
+	     '^\\documentclass' *.tex | wc -l)
+ifeq ($(NUMMAINS), 1)
+DISS     = $(shell grep --files-with-matches --exclude="_*_.tex" \
+	     '^\\documentclass' *.tex)
+else
+$(warning *** Could not determine main LaTeX file, trying to use $(DISS))
+$(warning *** - either delete all files containing '\documentclass')
+$(warning *** - or specify your main file in the Makefile)
+endif
 
 TEX      = latexmk
 TEXFLAGS = -recorder -pdf
