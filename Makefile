@@ -24,8 +24,6 @@ DOCKER   = docker run -it --rm -v $$(pwd):$$(pwd) -w $$(pwd) \
 
 .PHONY: docker clean crop pdf-local clean-local crop-local placeholder placeholder-local
 
-print-%  : ; @echo $* = $($*)
-
 docker: $(DISS)
 	 $(DOCKER) make pdf-local
 
