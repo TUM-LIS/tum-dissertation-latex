@@ -16,6 +16,13 @@ sub run_makeglossaries {
   };
 }
 
+# svg figure conversion using inkscape
+add_cus_dep('svg', 'pdf', 0, 'run_svgtopdf');
+
+sub run_svgtopdf {
+  system("inkscape --without-gui --export-area-drawing --export-pdf=$_[0].pdf $_[0].svg")
+}
+
 # clean up support for glossary and acronym files
 push @generated_exts, 'glo', 'gls', 'glg';
 push @generated_exts, 'acn', 'acr', 'alg';
