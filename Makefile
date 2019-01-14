@@ -5,12 +5,14 @@ DISS     = dissertation.tex
 NUMMAINS = $(shell grep --files-with-matches --exclude="_*_.tex" \
 	     '^\\documentclass' *.tex | wc -l)
 ifeq ($(NUMMAINS), 1)
-DISS     = $(shell grep --files-with-matches --exclude="_*_.tex" \
+override DISS     = $(shell grep --files-with-matches --exclude="_*_.tex" \
 	     '^\\documentclass' *.tex)
 else
-$(warning *** Could not determine main LaTeX file, trying to use $(DISS))
-$(warning *** - either delete all files containing '\documentclass')
-$(warning *** - or specify your main file in the Makefile)
+$(warning *** Could not determine main LaTeX file)
+$(warning     Found $(NUMMAINS) potential main files)
+$(warning     Trying fallback to $(DISS))
+$(warning     You might want to either delete all files containing '\documentclass')
+$(warning     or specify your main file in the Makefile explicitly)
 endif
 
 TEX      = latexmk
@@ -21,6 +23,8 @@ DOCKER   = docker run -it --rm -v $$(pwd):$$(pwd) -w $$(pwd) \
 	   andrerichter/tum-dissertation-latex
 
 .PHONY: docker clean crop pdf-local clean-local crop-local placeholder placeholder-local
+
+print-%  : ; @echo $* = $($*)
 
 docker: $(DISS)
 	 $(DOCKER) make pdf-local
