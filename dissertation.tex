@@ -129,13 +129,6 @@
 %   (2) Inconsistent anchors in hyperref.
 \usepackage{scrhack}
 
-% glossary functionality
-\usepackage[
-  toc,
-  acronym,
-  style = long
-]{glossaries}
-\makeglossaries
 
 % figure inclusion
 \usepackage[
@@ -161,21 +154,6 @@
 
 % enumeration
 \usepackage{enumerate}
-
-% hyperlinks
-\usepackage{url}
-\usepackage[
-  hidelinks,
-  bookmarksnumbered
-]{hyperref}
-
-% If hyperref is used, references to tables and figures link to their captions
-% and not the actual tables or figures. This is especially unwanted for figures,
-% because their captions are below the figure so that clicking on a link just
-% shows the captions and the figure is invisible.
-%
-% Using the caption package fixes this behaviour.
-\usepackage{caption}
 
 % Source code with highlighting
 \usepackage{listings}
@@ -219,11 +197,40 @@
 % dummy text
 \usepackage{lipsum}
 
+% hyperlinks
+% according to its documentation, hyperref should be loaded last
+% a list of packages that should be loaded after hyperref can be found at
+% https://tex.stackexchange.com/questions/1863/which-packages-should-be-loaded-after-hyperref-instead-of-before
+\usepackage{url}
+\usepackage[
+  hidelinks,
+  bookmarksnumbered
+]{hyperref}
+
+% If hyperref is used, references to tables and figures link to their captions
+% and not the actual tables or figures. This is especially unwanted for figures,
+% because their captions are below the figure so that clicking on a link just
+% shows the captions and the figure is invisible.
+%
+% Using the caption package fixes this behaviour.
+\usepackage{caption}
+
+% glossary functionality
+% loading glossaries after hyperref adds hyperlings to acronyms and glossary
+% entries
+\usepackage[
+  toc,
+  acronym,
+  style = long
+]{glossaries}
+\makeglossaries
+
 %-------------------------------------------------------------------------------
 % Include custom packages here
 %-------------------------------------------------------------------------------
 
 % \usepackage{}
+
 
 %-------------------------------------------------------------------------------
 % TUM CI colors for PGF
@@ -344,7 +351,7 @@
 \label{chap:sota}
 
 Example citations~\cite{barham2003xen, LIS}.
-
+Example acronym usage \gls{cpu}.
 
 
 \chapter{Content}
@@ -614,3 +621,8 @@ int main (void) {
 \lipsum[1-4]
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
