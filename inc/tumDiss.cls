@@ -4,17 +4,23 @@
 % --- Class options
 % title page font style
 \newif\if@titlepage@sansserif
-\newif\if@tumtext@sansserif
 \DeclareOption{seriftitlepage}{\@titlepage@sansseriffalse}%
 \DeclareOption{sansseriftitlepage}{\@titlepage@sansseriftrue}%
+\newif\if@tumtext@sansserif
+\DeclareOption{seriftumtext}{\@tumtext@sansseriffalse}%
+\DeclareOption{sansseriftumtext}{\@tumtext@sansseriftrue}%
 % title page layout lines
 \newif\if@titlepage@showlayout
 \DeclareOption{layouttitlepage}{\@titlepage@showlayouttrue}
 \DeclareOption{nolayouttitlepage}{\@titlepage@showlayoutfalse}
+% add toc to toc
+\newif\if@addtoctotoc
+\DeclareOption{addtoctotoc}{\@addtoctotoctrue}%
+\DeclareOption{notocintoc}{\@addtoctotocfalse}%
 % pass remaining options to scrbook class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}%
 % default options
-\ExecuteOptions{seriftitlepage,nolayouttitlepage}%
+\ExecuteOptions{seriftitlepage,nolayouttitlepage,addtoctotoc}%
 \ProcessOptions\relax
 
 % --- Derive from class scrbook
@@ -31,6 +37,28 @@
                                    % "Figure 3.9: XXX" as it should be
 ]{scrbook}%
 
+% --- Load packages
+% sans serif title page
+% computer modern sans serif does not have a small capitals font (which is used
+% for setting the TUM Text)
+%   http://tex.stackexchange.com/questions/16740/small-caps-with-cmss
+% The default behavior is, that TUM and LIS text is typeset using CM serif
+% If you wish, these are set also sans serif by switching to a different font
+%    http://www.linuxlibertine.org/index.php
+\if@titlepage@sansserif
+  \if@tumtext@sansserif
+    \IfFileExists{libertine.sty}{%
+      \RequirePackage[T1]{fontenc}%
+      \RequirePackage{libertine}%
+    }{%
+      \ClassWarningNoLine{tumDiss}{%
+        Missing package <libertine>.
+        Sans serif option 'seriftumtext' will be ignored.
+      }%
+    }%
+  \fi
+\fi
+
 % use manual text positioning on title page
 \if@titlepage@showlayout
   \RequirePackage[showboxes,absolute]{textpos}%
@@ -39,10 +67,15 @@
 \fi
 
 % used for toc tweaking
-\RequirePackage{etoolbox}
+\RequirePackage{etoolbox}%
+
+% add toc to toc
+\if@addtoctotoc
+  \RequirePackage{tocbibind}%
+\fi
 
 % load color and logo packages
-\RequirePackage{tumcolor}%
+\RequirePackage[pgfplots,svgnames,x11names]{tumcolor}%
 
 % --- Document styles
 % caption style
@@ -51,13 +84,13 @@
 
 % --- Document properties
 % parameters as set by the main file.
-\newcommand{\faculty}[1]{\def\@faculty{#1}}
-\newcommand{\degree}[1]{\def\@degree{#1}}
-\newcommand{\vorsitz}[1]{\def\@vorsitz{#1}}
-\newcommand{\erstpruef}[1]{\def\@erstpruef{#1}}
+\newcommand{\faculty}[1]{\def\@faculty{#1}}%
+\newcommand{\degree}[1]{\def\@degree{#1}}%
+\newcommand{\vorsitz}[1]{\def\@vorsitz{#1}}%
+\newcommand{\erstpruef}[1]{\def\@erstpruef{#1}}%
 
 \newif\ifzweitpruefaffil
-\newcommand{\zweitpruef}[2][]{
+\newcommand{\zweitpruef}[2][]{%
   \def\@zweitpruef{#2}
   \ifx#1\empty\else
     \def\@zweitpruefaffil{#1}
@@ -67,7 +100,7 @@
 
 \newif\ifdrittpruefset
 \newif\ifdrittpruefaffil
-\newcommand{\drittpruef}[2][]{
+\newcommand{\drittpruef}[2][]{%
   \ifx#2\empty\else
     \drittpruefsettrue
     \def\@drittpruef{#2}
@@ -79,7 +112,7 @@
 }
 
 \newif\ifdateaccepted
-\newcommand{\dateaccepted}[1]{
+\newcommand{\dateaccepted}[1]{%
   \ifx#1\empty\else
     \def\@dateaccepted{#1}
     \dateacceptedtrue
@@ -105,34 +138,30 @@
 \def\datevpos{241mm}%
 
 % --- Robustify
-% check if hyperref package was loaded
-\newif\if@hyperrefloaded\@hyperrefloadedtrue
+% clear textpos box
+% textpos interacts badly with some packages due to a conflict with \shipout
+% https://tex.stackexchange.com/questions/66804/unexpected-output-using-tikz-textpos
+\def\cleartextposbox{\global\setbox\TP@holdbox\vbox{}}
+
 \AtBeginDocument{%
+% pdf links: only if hyperref was loaded in main file
 \@ifpackageloaded{hyperref}{%
-    \@hyperrefloadedtrue%
-  }{%
-    \@hyperrefloadedfalse%
-  }
+  \hypersetup{%
+    bookmarks    = true,         % show bookmarks bar?
+    pdftoolbar   = true,         % show Acrobat’s toolbar?
+    pdfmenubar   = true,         % show Acrobat’s menu?
+    pdffitwindow = false,        % window fit to page when opened
+    pdfstartview = {FitH},       % fits the width of the page to the window
+    pdftitle     = {\@title},    % title
+    pdfauthor    = {\@author},   % author
+    pdfsubject   = {PhD Thesis}, % subject of the document
+    pdfcreator   = {\@author},   % creator of the document
+    pdfnewwindow = true,         % links in new window
+  }}{}%
 }
 
 % Title Page
 \renewcommand\maketitle{%
-  % pdf links: only if hyperref was loaded in main file
-  \if@hyperrefloaded
-    \hypersetup{%
-      bookmarks    = true,         % show bookmarks bar?
-      pdftoolbar   = true,         % show Acrobat’s toolbar?
-      pdfmenubar   = true,         % show Acrobat’s menu?
-      pdffitwindow = false,        % window fit to page when opened
-      pdfstartview = {FitH},       % fits the width of the page to the window
-      pdftitle     = {\@title},    % title
-      pdfauthor    = {\@author},   % author
-      pdfsubject   = {PhD Thesis}, % subject of the document
-      pdfcreator   = {\@author},   % creator of the document
-      pdfnewwindow = true,         % links in new window
-    }%
-  \fi
-
 \begin{titlepage}
     \if@titlepage@sansserif
       \sffamily
@@ -276,27 +305,15 @@
 \mbox{}
 \newpage
 \thispagestyle{empty}
-\mbox{}
-\newpage
+\null\newpage\cleartextposbox
 
-} % \renewcommand\maketitle{
+} % end \renewcommand\maketitle
 
 % --- toc tweaking
-% Add toc itself to toc (second command)
-% AND link to the correct page (first command)
-% Without first command, the pdf link targets an empty page
-\AtBeginDocument{%
-\if@hyperrefloaded
-  \pretocmd{\tableofcontents}{%
-    \if@openright\cleardoublepage\else\clearpage\fi
-    \addcontentsline{toc}{chapter}{\contentsname}%
-  }{}{}%
-\else
-  \RequirePackage{tocbibind}%
-\fi}
-
-% Make subsubsection numbered
+% make subsubsection numbered
 \setcounter{secnumdepth}{3}
 
-% Make subsubsection appear in TOC
+% make subsubsection appear in TOC
 \setcounter{tocdepth}{3}
+\endinput
+%% End of file `tumDiss.cls'.
