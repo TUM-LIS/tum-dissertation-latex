@@ -19,6 +19,7 @@ RUN set -x;                                       \
         texlive-lang-german                       \
         texlive-latex-extra                       \
         texlive-science                           \
+        texlive-fonts-extra                       \
         latexmk                                   \
         inkscape                                  \
         ;                                         \
