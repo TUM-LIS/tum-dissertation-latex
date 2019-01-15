@@ -84,13 +84,13 @@
 
 % --- Document properties
 % parameters as set by the main file.
-\newcommand{\faculty}[1]{\def\@faculty{#1}}
-\newcommand{\degree}[1]{\def\@degree{#1}}
-\newcommand{\vorsitz}[1]{\def\@vorsitz{#1}}
-\newcommand{\erstpruef}[1]{\def\@erstpruef{#1}}
+\newcommand{\faculty}[1]{\def\@faculty{#1}}%
+\newcommand{\degree}[1]{\def\@degree{#1}}%
+\newcommand{\vorsitz}[1]{\def\@vorsitz{#1}}%
+\newcommand{\erstpruef}[1]{\def\@erstpruef{#1}}%
 
 \newif\ifzweitpruefaffil
-\newcommand{\zweitpruef}[2][]{
+\newcommand{\zweitpruef}[2][]{%
   \def\@zweitpruef{#2}
   \ifx#1\empty\else
     \def\@zweitpruefaffil{#1}
@@ -100,7 +100,7 @@
 
 \newif\ifdrittpruefset
 \newif\ifdrittpruefaffil
-\newcommand{\drittpruef}[2][]{
+\newcommand{\drittpruef}[2][]{%
   \ifx#2\empty\else
     \drittpruefsettrue
     \def\@drittpruef{#2}
@@ -112,7 +112,7 @@
 }
 
 \newif\ifdateaccepted
-\newcommand{\dateaccepted}[1]{
+\newcommand{\dateaccepted}[1]{%
   \ifx#1\empty\else
     \def\@dateaccepted{#1}
     \dateacceptedtrue
@@ -316,12 +316,13 @@
 \thispagestyle{empty}
 \null\newpage\cleartextposbox
 
-} % \renewcommand\maketitle{
+} % end \renewcommand\maketitle
 
 % --- toc tweaking
-
-% Make subsubsection numbered
+% make subsubsection numbered
 \setcounter{secnumdepth}{3}
 
-% Make subsubsection appear in TOC
+% make subsubsection appear in TOC
 \setcounter{tocdepth}{3}
+\endinput
+%% End of file `tumDiss.cls'.
