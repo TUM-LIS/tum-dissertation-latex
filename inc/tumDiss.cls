@@ -67,7 +67,12 @@
 \fi
 
 % used for toc tweaking
-\RequirePackage{etoolbox}
+\RequirePackage{etoolbox}%
+
+% add toc to toc
+\if@addtoctotoc
+  \RequirePackage{tocbibind}%
+\fi
 
 % load color and logo packages
 \RequirePackage{tumcolor}%
@@ -310,18 +315,6 @@
 } % \renewcommand\maketitle{
 
 % --- toc tweaking
-% Add toc itself to toc (second command)
-% AND link to the correct page (first command)
-% Without first command, the pdf link targets an empty page
-\AtBeginDocument{%
-\if@hyperrefloaded
-  \pretocmd{\tableofcontents}{%
-    \if@openright\cleardoublepage\else\clearpage\fi
-    \addcontentsline{toc}{chapter}{\contentsname}%
-  }{}{}%
-\else
-  \RequirePackage{tocbibind}%
-\fi}
 
 % Make subsubsection numbered
 \setcounter{secnumdepth}{3}
