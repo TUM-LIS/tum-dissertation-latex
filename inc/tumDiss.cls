@@ -138,6 +138,11 @@
 \def\datevpos{241mm}%
 
 % --- Robustify
+% clear textpos box
+% textpos interacts badly with some packages due to a conflict with \shipout
+% https://tex.stackexchange.com/questions/66804/unexpected-output-using-tikz-textpos
+\def\cleartextposbox{\global\setbox\TP@holdbox\vbox{}}
+
 % check if hyperref package was loaded
 \newif\if@hyperrefloaded\@hyperrefloadedtrue
 \AtBeginDocument{%
@@ -309,8 +314,7 @@
 \mbox{}
 \newpage
 \thispagestyle{empty}
-\mbox{}
-\newpage
+\null\newpage\cleartextposbox
 
 } % \renewcommand\maketitle{
 
