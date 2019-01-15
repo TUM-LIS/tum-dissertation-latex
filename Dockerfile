@@ -26,7 +26,3 @@ RUN set -x;                                       \
     apt-get autoremove -q -y;                     \
     apt-get clean -q -y;                          \
     rm -rf /var/lib/apt/lists/*
-
-VOLUME ["/diss"]
-
-WORKDIR /diss
