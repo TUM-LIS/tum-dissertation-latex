@@ -75,7 +75,7 @@
 \fi
 
 % load color and logo packages
-\RequirePackage{tumcolor}%
+\RequirePackage[pgfplots,svgnames,x11names]{tumcolor}%
 
 % --- Document styles
 % caption style

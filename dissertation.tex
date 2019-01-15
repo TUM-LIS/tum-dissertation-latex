@@ -230,35 +230,6 @@
 %-------------------------------------------------------------------------------
 \definecolor{grey60} {RGB} {102, 102, 102} % 60% grey
 
-\pgfplotscreateplotcyclelist{tum}{
-  {color = TUMBlack,        mark = o,                     mark size = 3.8},
-  {color = TUMBlue,         mark = star,                  mark size = 3.8},
-  {color = TUMBlueDarker,   mark = square,                mark size = 3.8},
-  {color = TUMBlueLighter,  mark = triangle,              mark size = 3.8},
-  {color = TUMBlueDarkest,  mark = diamond,               mark size = 3.8},
-  {color = TUMBlueLightest, mark = |,                     mark size = 3.8},
-  %%
-  {color = TUMBlack,        mark = *,                     mark size = 3.8},
-  {color = TUMBlue,         mark = 10-pointed star,       mark size = 3.8},
-  {color = TUMBlueDarker,   mark = square*,               mark size = 3.8},
-  {color = TUMBlueLighter,  mark = triangle*,             mark size = 3.8},
-  {color = TUMBlueDarkest,  mark = diamond*,              mark size = 3.8},
-  {color = TUMBlueLightest, mark = Mercedes star flipped, mark size = 3.8}
-}
-
-\pgfplotsset{/pgfplots/bar cycle list/.style={/pgfplots/cycle list={
-      {black, mark = none, fill = TUMBlue},
-      {black, mark = none, fill = TUMBlueLightest},
-      {black, mark = none, pattern = north east lines, pattern color = TUMBlue},
-      {black, mark = none, pattern = north west lines, pattern color = TUMBlue},
-      {black, mark = none, pattern = north east lines, pattern color = TUMOrange},
-      {black, mark = none, pattern = north west lines, pattern color = TUMOrange},
-      {black, mark = none, pattern = horizontal lines, pattern color = TUMOrange},
-      {black, mark = none, pattern = crosshatch,       pattern color = TUMOrange}
-    }
-  }
-}
-
 %-------------------------------------------------------------------------------
 % Default values for pgfplots
 %-------------------------------------------------------------------------------
