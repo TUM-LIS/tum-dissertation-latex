@@ -14,13 +14,13 @@
 \DeclareOption{layouttitlepage}{\@titlepage@showlayouttrue}
 \DeclareOption{nolayouttitlepage}{\@titlepage@showlayoutfalse}
 % add toc to toc
-\newif\if@addtoctotoc\@addtoctotoctrue
-\DeclareOption{addtoctotoc}{\@titlepage@showlayouttrue}%
-\DeclareOption{notocintoc}{\@titlepage@showlayoutfalse}%
+\newif\if@addtoctotoc
+\DeclareOption{addtoctotoc}{\@addtoctotoctrue}%
+\DeclareOption{notocintoc}{\@addtoctotocfalse}%
 % pass remaining options to scrbook class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}%
 % default options
-\ExecuteOptions{seriftitlepage,nolayouttitlepage}%
+\ExecuteOptions{seriftitlepage,nolayouttitlepage,addtoctotoc}%
 \ProcessOptions\relax
 
 % --- Derive from class scrbook
