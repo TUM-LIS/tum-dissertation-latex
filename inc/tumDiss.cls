@@ -143,24 +143,25 @@
 % https://tex.stackexchange.com/questions/66804/unexpected-output-using-tikz-textpos
 \def\cleartextposbox{\global\setbox\TP@holdbox\vbox{}}
 
+\AtBeginDocument{%
+% pdf links: only if hyperref was loaded in main file
+\@ifpackageloaded{hyperref}{%
+  \hypersetup{%
+    bookmarks    = true,         % show bookmarks bar?
+    pdftoolbar   = true,         % show Acrobat’s toolbar?
+    pdfmenubar   = true,         % show Acrobat’s menu?
+    pdffitwindow = false,        % window fit to page when opened
+    pdfstartview = {FitH},       % fits the width of the page to the window
+    pdftitle     = {\@title},    % title
+    pdfauthor    = {\@author},   % author
+    pdfsubject   = {PhD Thesis}, % subject of the document
+    pdfcreator   = {\@author},   % creator of the document
+    pdfnewwindow = true,         % links in new window
+  }}{}%
+}
+
 % Title Page
 \renewcommand\maketitle{%
-  % pdf links: only if hyperref was loaded in main file
-  \@ifpackageloaded{hyperref}{%
-    \hypersetup{%
-      bookmarks    = true,         % show bookmarks bar?
-      pdftoolbar   = true,         % show Acrobat’s toolbar?
-      pdfmenubar   = true,         % show Acrobat’s menu?
-      pdffitwindow = false,        % window fit to page when opened
-      pdfstartview = {FitH},       % fits the width of the page to the window
-      pdftitle     = {\@title},    % title
-      pdfauthor    = {\@author},   % author
-      pdfsubject   = {PhD Thesis}, % subject of the document
-      pdfcreator   = {\@author},   % creator of the document
-      pdfnewwindow = true,         % links in new window
-    }%
-  }{}%
-
 \begin{titlepage}
     \if@titlepage@sansserif
       \sffamily
