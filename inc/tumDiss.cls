@@ -285,11 +285,15 @@
 % Add toc itself to toc (second command)
 % AND link to the correct page (first command)
 % Without first command, the pdf link targets an empty page
-\pretocmd{\tableofcontents}{%
-  \if@openright\cleardoublepage\else\clearpage\fi
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\contentsname}
-}{}{}%
+\AtBeginDocument{%
+\if@hyperrefloaded
+  \pretocmd{\tableofcontents}{%
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \addcontentsline{toc}{chapter}{\contentsname}%
+  }{}{}%
+\else
+  \RequirePackage{tocbibind}%
+\fi}
 
 % Make subsubsection numbered
 \setcounter{secnumdepth}{3}
