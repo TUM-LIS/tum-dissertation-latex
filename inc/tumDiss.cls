@@ -143,20 +143,10 @@
 % https://tex.stackexchange.com/questions/66804/unexpected-output-using-tikz-textpos
 \def\cleartextposbox{\global\setbox\TP@holdbox\vbox{}}
 
-% check if hyperref package was loaded
-\newif\if@hyperrefloaded\@hyperrefloadedtrue
-\AtBeginDocument{%
-\@ifpackageloaded{hyperref}{%
-    \@hyperrefloadedtrue%
-  }{%
-    \@hyperrefloadedfalse%
-  }
-}
-
 % Title Page
 \renewcommand\maketitle{%
   % pdf links: only if hyperref was loaded in main file
-  \if@hyperrefloaded
+  \@ifpackageloaded{hyperref}{%
     \hypersetup{%
       bookmarks    = true,         % show bookmarks bar?
       pdftoolbar   = true,         % show Acrobat’s toolbar?
@@ -169,7 +159,7 @@
       pdfcreator   = {\@author},   % creator of the document
       pdfnewwindow = true,         % links in new window
     }%
-  \fi
+  }{}%
 
 \begin{titlepage}
     \if@titlepage@sansserif
