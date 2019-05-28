@@ -83,14 +83,19 @@ The `Makefile` already has targets for building without docker, just make them d
 You can auto build and publish your dissertation on every tagged release.
 
 ### Prerequisites
-1. Use Gitlab (e.g. gitlab.com or gitlab.lrz.de)
-2. Enable `Pipelines` for your project under `Settings > General > Permissions` (https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html)
-3. Enable Gitlab runners for your project under `Settings > CI/CD` (https://docs.gitlab.com/ee/ci/runners/)
-4. Create a `Personal Access Token` with the `api` scope (https://gitlab.com/profile/personal_access_tokens)
-5. Add the token as environment variable `GITLAB_ACCESS_TOKEN` in project `Settings > CI/CD > Variables` (https://docs.gitlab.com/ee/ci/variables/#creating-a-custom-environment-variable).
-6. Create and push a tag, wait ~2mins and find your dissertation as PDF under your project tags (https://gitlab.com/USER/REPO/tags) to download.
+1. Use Gitlab (e.g. [gitlab.com](https://www.gitlab.com) or [gitlab.lrz.de](https://gitlab.lrz.de)).
+2. [Enable Pipelines][auto_1] for your project under `Settings > General > Permissions`.
+3. [Enable Gitlab runners][auto_2] for your project under `Settings > CI/CD`.
+4. Create a [Personal Access Token][auto_3] with the `api` scope.
+5. Add the token [as environment variable][auto_4] `GITLAB_ACCESS_TOKEN` in project `Settings > CI/CD > Variables`.
+6. Create and push a tag, wait ~2mins and find your dissertation as PDF under your project tags to download (https://gitlab.com/USER/REPO/tags).
 
 _Note: https://gitlab.lrz.de/ currently does not provide shared runners. Submit a friendly request here: https://servicedesk.lrz.de/de_
+
+[auto_1]: https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html
+[auto_2]: https://docs.gitlab.com/ee/ci/runners
+[auto_3]: https://gitlab.com/profile/personal_access_tokens
+[auto_4]: https://docs.gitlab.com/ee/ci/variables/#creating-a-custom-environment-variable
 
 ## Link list of logo resources
 
