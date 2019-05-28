@@ -78,6 +78,18 @@ The TUM design guidelines lack explicit statements about how to place non-quadra
 Linux/macOS users who want to build without Docker most likely know what to do. Dependencies can be found inside `Dockerfile`.
 The `Makefile` already has targets for building without docker, just make them default.
 
+## Auto build and publish dissertation
+
+You can auto build and publish your dissertation on every tagged release.
+
+### Prerequisites
+1. Use Gitlab
+2. Enable Gitlab runners for repo (https://docs.gitlab.com/ee/ci/runners/)
+_Note: http://gitlab.lrz.de/ currently does not provide shared runners._
+3. Create a `Personal Access Token` with the `api` scope (https://gitlab.com/profile/personal_access_tokens)
+4. Add the token as environment variable `GITLAB_ACCESS_TOKEN` in your dissertation repository (https://gitlab.com/<user>/<repo>/settings/ci_cd).
+5. Create and push a tag.
+
 ## Link list of logo resources
 
 - [TUM Logo](https://portal.mytum.de/corporatedesign/vorlagen/index_Logos/dateien/TUM_Logo_blau_rgb_s)
