@@ -87,7 +87,7 @@ You can auto build and publish your dissertation on every tagged release.
 2. Enable Gitlab runners for repo (https://docs.gitlab.com/ee/ci/runners/)
 _Note: http://gitlab.lrz.de/ currently does not provide shared runners._
 3. Create a `Personal Access Token` with the `api` scope (https://gitlab.com/profile/personal_access_tokens)
-4. Add the token as environment variable `GITLAB_ACCESS_TOKEN` in your dissertation repository (https://gitlab.com/<user>/<repo>/settings/ci_cd).
+4. Add the token as environment variable `GITLAB_ACCESS_TOKEN` in your dissertation repository (https://gitlab.com/USER/REPO/settings/ci_cd).
 5. Create and push a tag.
 
 ## Link list of logo resources
