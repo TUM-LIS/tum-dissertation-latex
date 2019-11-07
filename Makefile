@@ -19,7 +19,7 @@ TEX      = latexmk
 TEXFLAGS = -recorder -pdf
 TEXCLEAN = -bibtex -c
 
-DOCKER   = docker run -it --rm -v $$(pwd):$$(pwd) -w $$(pwd) \
+DOCKER   = docker run --rm -v $$(pwd):$$(pwd) -w $$(pwd) \
 	   andrerichter/tum-dissertation-latex
 
 .PHONY: docker clean crop pdf-local clean-local crop-local placeholder placeholder-local

@@ -1,4 +1,4 @@
-SET docker=docker run -it --rm -v "%CD%":/diss andrerichter/tum-dissertation-latex
+SET docker=docker run --rm -v "%CD%":/diss andrerichter/tum-dissertation-latex
 
 IF "%1"=="crop" %docker% make crop-local
 IF "%1"=="" %docker% make pdf-local
