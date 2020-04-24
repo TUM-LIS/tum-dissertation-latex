@@ -82,10 +82,11 @@ The `Makefile` already has targets for building without docker, just make them d
 
 You can auto build and publish your dissertation on every tagged release.
 
-### Gitlab
-1. Use Gitlab (e.g. [gitlab.com](https://www.gitlab.com) or [gitlab.lrz.de](https://gitlab.lrz.de)).
+
+### GitLab
+1. Use GitLab (e.g. [gitlab.com](https://www.gitlab.com) or [gitlab.lrz.de](https://gitlab.lrz.de)).
 2. [Enable Pipelines][auto_1] for your project under `Settings > General > Permissions`.
-3. [Enable Gitlab runners][auto_2] for your project under `Settings > CI/CD`.
+3. [Enable GitLab runners][auto_2] for your project under `Settings > CI/CD`.
 4. Create a [Personal Access Token][auto_3] with the `api` scope.
 5. Add the token [as environment variable][auto_4] `GITLAB_ACCESS_TOKEN` in project `Settings > CI/CD > Variables`.
 6. Create and push a tag, wait ~2mins and find your dissertation as PDF under your project tags to download (https://gitlab.com/USER/REPO/tags).
@@ -97,8 +98,9 @@ _Note: https://gitlab.lrz.de/ currently does not provide shared runners. Submit 
 [auto_3]: https://gitlab.com/profile/personal_access_tokens
 [auto_4]: https://docs.gitlab.com/ee/ci/variables/#creating-a-custom-environment-variable
 
-### Github
-To use github actions, you can simply paste the below code into a new `.yml` or `.yaml` file in `.github/workflows/` the automatic tests then work after the next push event.
+
+### GitHub
+To use GitHub Actions, you can simply paste the below code into a new `.yml` or `.yaml` file in `.github/workflows/`. The automatic tests then work after the next push event.
 
 ```yaml
 # This is a workflow file to auto-build the latex code.
