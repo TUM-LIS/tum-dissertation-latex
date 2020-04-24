@@ -82,7 +82,7 @@ The `Makefile` already has targets for building without docker, just make them d
 
 You can auto build and publish your dissertation on every tagged release.
 
-### Prerequisites
+### Gitlab
 1. Use Gitlab (e.g. [gitlab.com](https://www.gitlab.com) or [gitlab.lrz.de](https://gitlab.lrz.de)).
 2. [Enable Pipelines][auto_1] for your project under `Settings > General > Permissions`.
 3. [Enable Gitlab runners][auto_2] for your project under `Settings > CI/CD`.
@@ -96,6 +96,62 @@ _Note: https://gitlab.lrz.de/ currently does not provide shared runners. Submit 
 [auto_2]: https://docs.gitlab.com/ee/ci/runners
 [auto_3]: https://gitlab.com/profile/personal_access_tokens
 [auto_4]: https://docs.gitlab.com/ee/ci/variables/#creating-a-custom-environment-variable
+
+### Github
+To use github actions, you can simply paste the below code into a new `.yml` or `.yaml` file in `.github/workflows/` the automatic tests then work after the next push event.
+
+```yaml
+# This is a workflow file to auto-build the latex code.
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Build
+      uses: docker://andrerichter/tum-dissertation-latex
+      with:
+        entrypoint: make
+        args: pdf-local
+        # if your dissertation is not in the root directory of the github repository, add the directory using the -C option of make.
+
+    # Publish the artifacts
+    - name: Publish artifact
+      uses: actions/upload-artifact@v2-preview
+      with:
+        name: dissertation
+        path: dissertation.pdf
+        # if your dissertation is not in the root directory of the github repository, you have to adapt the previous path!
+
+    # Publish artifact as release so it is more prominent
+    - name: Release artifact
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "dissertation.pdf"
+        # if your dissertation is not in the root directory of the github repository, you have to adapt the previous path!
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: current
+        allowUpdates: true
+
+```
 
 ## Link list of logo resources
 
