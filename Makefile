@@ -35,6 +35,9 @@ crop:
 
 pdf-local: $(DISS)
 	$(TEX) $(TEXFLAGS) $(DISS)
+ifdef ORIGINAL_DISS_PATH
+	./fix_windows_synctex.sh
+endif
 
 clean-local:
 	$(TEX) $(TEXCLEAN)
