@@ -6,3 +6,4 @@ sed -i'' "s|:/diss|:${ORIGINAL_DISS_PATH//\\/\/}|g" dissertation.synctex
 echo "sed complete"
 gzip dissertation.synctex
 echo "gz complete"
+touch dissertation.pdf
