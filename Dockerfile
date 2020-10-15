@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Andre Richter <andre.richter@tum.de>
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -10,19 +10,18 @@ LABEL org.label-schema.build-date=$BUILD_DATE                                   
       org.label-schema.vcs-ref=$VCS_REF                                                \
       org.label-schema.schema-version="1.1"
 
-RUN set -x;                                       \
-    apt-get update -q -y;                         \
-    apt-get install -q -y --no-install-recommends \
-        build-essential                           \
-        texlive                                   \
-        texlive-generic-extra                     \
-        texlive-lang-german                       \
-        texlive-latex-extra                       \
-        texlive-science                           \
-        texlive-luatex                            \
-        latexmk                                   \
-        inkscape                                  \
-        ;                                         \
-    apt-get autoremove -q -y;                     \
-    apt-get clean -q -y;                          \
-    rm -rf /var/lib/apt/lists/*
+RUN set -x                                           \
+    && apt-get update -q -y                          \
+    && apt-get install -q -y --no-install-recommends \
+        build-essential                              \
+        texlive                                      \
+        texlive-formats-extra                        \
+        texlive-lang-german                          \
+        texlive-latex-extra                          \
+        texlive-science                              \
+        texlive-luatex                               \
+        latexmk                                      \
+        inkscape                                     \
+    && apt-get autoremove -q -y                      \
+    && apt-get clean -q -y                           \
+    && rm -rf /var/lib/apt/lists/*
