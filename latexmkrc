@@ -2,7 +2,8 @@
 # https://www.ctan.org/tex-archive/support/latexmk/example_rcfiles
 
 # compiler options
-$pdflatex = 'TEXINPUTS="./inc//:" pdflatex -interaction=batchmode -shell-escape -synctex=1 %O %S';
+ensure_path('TEXINPUTS', './inc//');  # include the local inc directory in the latex search path
+$pdflatex = 'pdflatex -interaction=batchmode -shell-escape -synctex=1 %O %S';
 $pdf_mode = 1;
 $bibtex_use = 1;
 
